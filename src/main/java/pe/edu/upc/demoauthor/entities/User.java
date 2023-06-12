@@ -1,25 +1,18 @@
 package pe.edu.upc.demoauthor.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class Users implements Serializable {
+public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "user_id")
 	private Long id;
 
 	@Column(length = 30, unique = true)
@@ -27,9 +20,19 @@ public class Users implements Serializable {
 	@Column(length = 200)
 	private String password;
 	private Boolean enabled;
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "users",
+			joinColumns = @JoinColumn(name = "user_id"),
+			inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private List<Role> roles;
+
+	public User() {
+		this.roles = new ArrayList<>();
+	}
+
+	public void addRole(Role role){
+		this.roles.add(role);
+	}
 
 	public Long getId() {
 		return id;

@@ -1,18 +1,13 @@
 package pe.edu.upc.demoauthor.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
+
 
 @Entity
-@Table(name = "roles", uniqueConstraints = { @UniqueConstraint(columnNames = { "user_id", "rol" }) })
+@Table(name = "roles")
 public class Role implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -22,21 +17,6 @@ public class Role implements Serializable {
 	private Long id;
 
 	private String rol;
-	
-	@ManyToOne
-	@JoinColumn(name="user_id", nullable=false)
-	private Users user;
-	
-	
-	//GETTERS AND SETTERES
-
-	public Users getUser() {
-		return user;
-	}
-
-	public void setUser(Users user) {
-		this.user = user;
-	}
 
 	public Long getId() {
 		return id;

@@ -1,13 +1,13 @@
 package pe.edu.upc.demoauthor.dtos;
 
-import pe.edu.upc.demoauthor.entities.Users;
+import pe.edu.upc.demoauthor.entities.User;
 
 public class RoleDTO {
     private Long id;
 
     private String rol;
 
-    private Users user;
+    private User user;
 
     public Long getId() {
         return id;
@@ -25,11 +25,11 @@ public class RoleDTO {
         this.rol = rol;
     }
 
-    public Users getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(Users user) {
+    public void setUser(User user) {
         this.user = user;
     }
 }
