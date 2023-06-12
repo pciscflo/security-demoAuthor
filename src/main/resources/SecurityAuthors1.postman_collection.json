@@ -45,45 +45,6 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/users/save",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZXBlIiwiZXhwIjoxNjg2NDI2Njk3LCJub21icmUiOiJyb3NhIiwiaWF0IjoxNjg2NDA4Njk3fQ.efYjYxTrXv3EGG6ppbccVRzthBSrh7iKS5jR7WhUYtpN1IzWY9dOSzcRMj1vjXtM4kRPzE2nOkUGG6ognkK4SQ",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"mary\",\r\n    \"password\" : 123456,\r\n    \"enabled\": true\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/users/save",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"users",
-						"save"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "http://localhost:8080/autores",
 			"request": {
 				"auth": {
