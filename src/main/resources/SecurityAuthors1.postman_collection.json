@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "188ef6c7-5740-4cb5-a8b7-65130934fd33",
+		"name": "SecurityAuthors1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4117618"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/authenticate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"pepe\",\r\n    \"password\" : 123456\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/save",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZXBlIiwiZXhwIjoxNjg2NDI2Njk3LCJub21icmUiOiJyb3NhIiwiaWF0IjoxNjg2NDA4Njk3fQ.efYjYxTrXv3EGG6ppbccVRzthBSrh7iKS5jR7WhUYtpN1IzWY9dOSzcRMj1vjXtM4kRPzE2nOkUGG6ognkK4SQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"mary\",\r\n    \"password\" : 123456,\r\n    \"enabled\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/autores",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZXBlIiwiZXhwIjoxNjg2MjU2OTc4LCJub21icmUiOiJyb3NhIiwiaWF0IjoxNjg2MjM4OTc4fQ.vKteiiV8eyu5Q-03UkDR-33mNVQqLOw2RR7AwhQ_tjCSEAw5i88G8j-l1GAtNO2Cs4FYN9xJClWf3Wa8V3M2dQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/autores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/autores",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZXBlIiwiZXhwIjoxNjg2MjU2OTc4LCJub21icmUiOiJyb3NhIiwiaWF0IjoxNjg2MjM4OTc4fQ.vKteiiV8eyu5Q-03UkDR-33mNVQqLOw2RR7AwhQ_tjCSEAw5i88G8j-l1GAtNO2Cs4FYN9xJClWf3Wa8V3M2dQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/autores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/autores",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZXBlIiwiZXhwIjoxNjg2MjU2OTc4LCJub21icmUiOiJyb3NhIiwiaWF0IjoxNjg2MjM4OTc4fQ.vKteiiV8eyu5Q-03UkDR-33mNVQqLOw2RR7AwhQ_tjCSEAw5i88G8j-l1GAtNO2Cs4FYN9xJClWf3Wa8V3M2dQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameAuthor\": \"Arguedas\",\r\n    \"emailAuthor\": \"arguedas@gmail.com\",\r\n    \"birthDateAuthor\": \"2011-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/autores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZXBlIiwiZXhwIjoxNjg2MjU2OTc4LCJub21icmUiOiJyb3NhIiwiaWF0IjoxNjg2MjM4OTc4fQ.vKteiiV8eyu5Q-03UkDR-33mNVQqLOw2RR7AwhQ_tjCSEAw5i88G8j-l1GAtNO2Cs4FYN9xJClWf3Wa8V3M2dQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
