@@ -22,7 +22,7 @@ public class User implements Serializable {
 	private Boolean enabled;
 	//LAZY = cuando se necesario	EAGER = carga inmediatamente
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "users",
+	@JoinTable(name = "users_roles",
 			joinColumns = @JoinColumn(name = "user_id"),
 			inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private List<Role> roles;

@@ -15,6 +15,8 @@ import pe.edu.upc.demoauthor.entities.Role;
 import pe.edu.upc.demoauthor.entities.User;
 import pe.edu.upc.demoauthor.services.IUserService;
 
+import java.util.List;
+
 
 @Controller
 @Secured({"ROLE_ADMIN"})
@@ -25,24 +27,21 @@ public class UserController {
 	@Autowired
 	private IUserService uService;
 
-	@PostMapping("/save/{role_id}")
-	public ResponseEntity<Integer> saveUser(@PathVariable("role_id") Long role_id, @RequestBody User user){
-		    String bcryptPassword = bcrypt.encode(user.getPassword());
+	@PostMapping("/save")
+	public ResponseEntity<Integer> saveUser(@RequestBody User user) {
+		if (uService.buscarUser(user.getUsername()) == 0) {
+			String bcryptPassword = bcrypt.encode(user.getPassword());
 			user.setPassword(bcryptPassword);
-			uService.insertUser(user.getUsername(),user.getPassword(),user.getEnabled(),
-					role_id);
-		return new ResponseEntity<Integer>(1, HttpStatus.OK );
-	}
-
-	@GetMapping("/list")
-	public String listUser(Model model) {
-		try {
-			model.addAttribute("user", new User());
-			model.addAttribute("listaUsuarios", uService.list());
-		} catch (Exception e) {
-			model.addAttribute("error", e.getMessage());
+			uService.insertUser(user);
+			return new ResponseEntity<Integer>(1, HttpStatus.OK);
 		}
-		return "usersecurity/listUser";
+		return new ResponseEntity<Integer>(0, HttpStatus.BAD_REQUEST);
+	}
+	@PostMapping("/save/{user_id}/{rol_id}")
+	public ResponseEntity<Integer> saveUseRol(@PathVariable("user_id") Long user_id,
+											  @PathVariable("rol_id") Long rol_id){
+		   return new ResponseEntity<Integer>(uService.insertUserRol(user_id, rol_id),HttpStatus.OK);
 	}
 
 }
+

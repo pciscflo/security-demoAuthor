@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import pe.edu.upc.demoauthor.entities.Book;
 import pe.edu.upc.demoauthor.entities.User;
 import pe.edu.upc.demoauthor.repositories.UserRepository;
 import pe.edu.upc.demoauthor.services.IUserService;
@@ -23,15 +24,26 @@ public class UserServiceImpl implements IUserService {
 		}
 		return rpta;
 	}
+	public Integer buscarUser(String username){
+		int rpta = uR.buscarUsername(username);
+		return rpta;
+	}
 
 	@Override
-	public void insertUser(String username, String password, boolean enabled, Long rol_id) {
-		uR.insertUser(username, password, enabled, rol_id);
+	public void insertUser(User user) {
+		uR.save(user);
 	}
 
 	@Override
 	public List<User> list() {
 		// TODO Auto-generated method stub
 		return uR.findAll();
+	}
+
+	@Override
+	public Integer insertUserRol(Long user_id, Long rol_id) {
+		Integer result = 0;
+		uR.insertUserRol(user_id, rol_id);
+		return 1;
 	}
 }
