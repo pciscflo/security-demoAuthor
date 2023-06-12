@@ -20,6 +20,7 @@ public class User implements Serializable {
 	@Column(length = 200)
 	private String password;
 	private Boolean enabled;
+	//LAZY = cuando se necesario	EAGER = carga inmediatamente
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "users",
 			joinColumns = @JoinColumn(name = "user_id"),
