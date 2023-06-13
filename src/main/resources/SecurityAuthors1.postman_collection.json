@@ -168,6 +168,38 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/save/3/2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZXBlIiwiZXhwIjoxNjg2Njg5ODI0LCJub21icmUiOiJyb3NhIiwiaWF0IjoxNjg2NjcxODI0fQ.BvfNi33byCRZfcN7hvZjNNXwors50P_i9f1_8NpKa-5mzebDuKdcAE81x0HD0QSiZqhUCLCvvW_2tSZTShNU4w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/save/3/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"save",
+						"3",
+						"2"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
